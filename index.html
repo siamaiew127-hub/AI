@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<!-- =============================================
+     SEO & META
+     ============================================= -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Md. Siam Hossen — AI Automation Learner & Freelancer from Bangladesh. Building n8n workflows, AI chatbots, and web automation solutions." />
+<meta name="keywords" content="AI automation, n8n, Make.com, chatbot, web scraping, freelancer, Bangladesh, Khulna" />
+<meta name="author" content="Md. Siam Hossen" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Md. Siam Hossen — AI Automation Learner" />
+<meta property="og:description" content="Building smart automations that save time and grow businesses." />
+<meta property="og:image" content="images/og-image.jpg" />
+<meta property="og:url" content="https://siamhossen.com" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Md. Siam Hossen — AI Automation" />
+<meta name="twitter:description" content="Building smart automations that save time and grow businesses." />
+
+<!-- Canonical -->
+<link rel="canonical" href="https://siamhossen.com" />
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Md. Siam Hossen",
+  "jobTitle": "AI Automation Freelancer",
+  "url": "https://siamhossen.com",
+  "address": { "@type": "PostalAddress", "addressCountry": "BD", "addressRegion": "Khulna" }
+}
+</script>
+
+<title>Md. Siam Hossen — AI Automation Learner</title>
+
+<!-- Fonts (preconnect for performance) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<!-- Static deployment — no backend required -->
+
+<style>
+/* =============================================
+   CSS VARIABLES & RESET
+   ============================================= */
+:root {
+  --orange: #FF6B2B;
+  --orange-light: #FF8C5A;
+  --orange-dark: #E05520;
+  --bg: #FFFFFF;
+  --bg2: #F8F7F4;
+  --bg3: #F0EDE8;
+  --text: #111111;
+  --text2: #444444;
+  --text3: #888888;
+  --border: #E5E2DC;
+  --shadow: 0 4px 24px rgba(0,0,0,0.07);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font-head: 'Josefin Sans', 'Century Gothic', sans-serif;
+  --font-body: 'Nunito', 'Century Gothic', sans-serif;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+[data-theme="dark"] {
+  --bg: #0F0F0F;
+  --bg2: #181818;
+  --bg3: #222222;
+  --text: #F5F5F0;
+  --text2: #CCCCCC;
+  --text3: #888888;
+  --border: #2A2A2A;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.6);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background var(--transition), color var(--transition);
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: var(--font-body); }
+ul { list-style: none; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 99px; }
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 40px;
+  height: 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition), border-color var(--transition);
+}
+[data-theme="dark"] #navbar { background: rgba(15,15,15,0.88); }
+.nav-logo { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; letter-spacing: 0.03em; }
+.nav-logo span { color: var(--orange); }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  font-size: 0.88rem; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--text2); position: relative;
+  transition: color var(--transition);
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px; background: var(--orange);
+  border-radius: 99px; transition: width var(--transition);
+}
+.nav-links a:hover { color: var(--orange); }
+.nav-links a:hover::after { width: 100%; }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.btn-theme {
+  width: 42px; height: 42px; border: 1.5px solid var(--border);
+  border-radius: 50%; background: var(--bg2); color: var(--text2);
+  font-size: 1rem; display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition);
+}
+.btn-theme:hover { border-color: var(--orange); color: var(--orange); }
+.btn-admin-nav {
+  padding: 8px 18px; border-radius: 99px; border: 1.5px solid var(--border);
+  background: transparent; color: var(--text2); font-size: 0.82rem;
+  font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  transition: all var(--transition);
+}
+.btn-admin-nav:hover { border-color: var(--orange); color: var(--orange); }
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 99px; transition: all var(--transition); }
+@media (max-width: 900px) { .nav-links { display: none; } .hamburger { display: flex; } }
+.mobile-menu {
+  display: none; position: fixed; top: 72px; left: 0; right: 0;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+  padding: 20px 40px; flex-direction: column; gap: 16px; z-index: 999;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-weight: 600; font-size: 0.95rem; color: var(--text2); transition: color var(--transition); }
+.mobile-menu a:hover { color: var(--orange); }
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px; border-radius: 99px; font-weight: 700;
+  font-size: 0.9rem; letter-spacing: 0.04em; border: none;
+  transition: all var(--transition); cursor: pointer;
+}
+.btn-primary { background: var(--orange); color: #fff; box-shadow: 0 4px 20px rgba(255,107,43,0.35); }
+.btn-primary:hover { background: var(--orange-dark); box-shadow: 0 8px 28px rgba(255,107,43,0.45); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--text); border: 2px solid var(--border); }
+.btn-outline:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-2px); }
+
+/* =============================================
+   SECTION COMMON
+   ============================================= */
+section { padding: 100px 40px; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 14px;
+}
+.section-label::before { content: ''; width: 24px; height: 2px; background: var(--orange); border-radius: 99px; }
+.section-title { font-family: var(--font-head); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
+.section-subtitle { color: var(--text2); font-size: 1.05rem; max-width: 560px; }
+.container { max-width: 1200px; margin: 0 auto; }
+
+/* =============================================
+   HERO
+   ============================================= */
+#hero {
+  min-height: 100vh; padding: 120px 40px 80px;
+  display: flex; align-items: center;
+  background: var(--bg); position: relative; overflow: hidden;
+}
+#hero::before {
+  content: ''; position: absolute; top: -120px; right: -120px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,107,43,0.1) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 420px;
+  gap: 80px; align-items: center; width: 100%;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px; background: rgba(255,107,43,0.1);
+  border: 1px solid rgba(255,107,43,0.3); border-radius: 99px;
+  font-size: 0.82rem; font-weight: 700; color: var(--orange);
+  letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px;
+}
+.hero-badge::before {
+  content: ''; width: 8px; height: 8px; background: var(--orange);
+  border-radius: 50%; animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
+.hero-name { font-family: var(--font-head); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 16px; }
+.hero-name .highlight { color: var(--orange); }
+.hero-role { font-size: 1.15rem; color: var(--text2); margin-bottom: 32px; font-weight: 500; }
+.hero-desc { font-size: 1.02rem; color: var(--text2); max-width: 480px; margin-bottom: 40px; line-height: 1.8; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 52px; }
+.hero-stats { display: flex; gap: 40px; }
+.stat-num { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--orange); }
+.stat-label { font-size: 0.8rem; color: var(--text3); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.hero-image-wrap { position: relative; display: flex; align-items: center; justify-content: center; }
+.hero-image-outer {
+  width: 340px; height: 340px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+  padding: 5px; position: relative;
+}
+.hero-image-inner {
+  width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
+  background: var(--bg3); display: flex; align-items: center; justify-content: center;
+}
+.hero-image-inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.hero-image-inner .placeholder-icon { font-size: 5rem; color: var(--text3); }
+.hero-social {
+  display: flex; flex-direction: column; gap: 12px;
+  position: absolute; right: -56px; top: 50%; transform: translateY(-50%);
+}
+.hero-social a {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--bg); border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text3); font-size: 0.9rem; transition: all var(--transition);
+  box-shadow: var(--shadow);
+}
+.hero-social a:hover { background: var(--orange); color: #fff; border-color: var(--orange); transform: translateX(-4px); }
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-social { position: static; flex-direction: row; transform: none; margin-top: 24px; }
+  .hero-image-outer { width: 260px; height: 260px; }
+}
+@media (max-width: 600px) { section { padding: 72px 24px; } #hero { padding: 100px 24px 64px; } #navbar { padding: 0 24px; } }
+
+/* =============================================
+   ABOUT
+   ============================================= */
+#about { background: var(--bg2); }
+.about-grid { display: grid; grid-template-columns: 400px 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+.about-image-wrap { position: relative; }
+.about-image-outer { width: 100%; aspect-ratio: 1; border-radius: var(--radius); overflow: hidden; background: var(--bg3); display: flex; align-items: center; justify-content: center; }
+.about-image-outer img { width: 100%; height: 100%; object-fit: cover; }
+.about-image-outer .placeholder-icon { font-size: 5rem; color: var(--text3); }
+.about-text { font-size: 1.05rem; color: var(--text2); margin-bottom: 32px; line-height: 1.85; }
+.about-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+.info-item { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; }
+.info-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 4px; }
+.info-value { font-weight: 700; color: var(--text); font-size: 0.95rem; }
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+
+/* =============================================
+   SKILLS
+   ============================================= */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 56px; }
+.skill-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); transition: transform var(--transition); }
+.skill-card:hover { transform: translateY(-4px); }
+.skill-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+.skill-icon { width: 44px; height: 44px; background: rgba(255,107,43,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 1.1rem; }
+.skill-card-title { font-family: var(--font-head); font-weight: 700; font-size: 1rem; }
+.skill-bar-wrap { margin-bottom: 14px; }
+.skill-bar-label { display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; color: var(--text2); margin-bottom: 6px; }
+.skill-bar { height: 6px; background: var(--bg3); border-radius: 99px; overflow: hidden; }
+.skill-bar-fill { height: 100%; background: linear-gradient(90deg, var(--orange), var(--orange-light)); border-radius: 99px; width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+
+/* =============================================
+   PROJECTS
+   ============================================= */
+#projects { background: var(--bg2); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-top: 56px; }
+.project-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all var(--transition); display: flex; flex-direction: column; }
+.project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.project-thumb { height: 140px; background: linear-gradient(135deg, rgba(255,107,43,0.08), rgba(255,107,43,0.04)); display: flex; align-items: center; justify-content: center; font-size: 2.8rem; color: var(--orange); }
+.project-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.project-tag { padding: 3px 10px; background: rgba(255,107,43,0.08); color: var(--orange); border-radius: 99px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
+.project-title { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; margin-bottom: 8px; }
+.project-desc { color: var(--text2); font-size: 0.9rem; line-height: 1.65; flex: 1; margin-bottom: 20px; }
+.project-links { display: flex; gap: 10px; margin-top: auto; }
+.project-link { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; border-radius: 99px; font-size: 0.8rem; font-weight: 700; border: 1.5px solid var(--border); color: var(--text2); transition: all var(--transition); }
+.project-link:hover { border-color: var(--orange); color: var(--orange); }
+.project-link.primary { background: var(--orange); color: #fff; border-color: var(--orange); }
+.project-link.primary:hover { background: var(--orange-dark); }
+
+/* =============================================
+   SERVICES
+   ============================================= */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; margin-top: 56px; }
+.service-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; transition: all var(--transition); }
+.service-card:hover { background: var(--bg); transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--orange); }
+.service-icon { width: 56px; height: 56px; background: rgba(255,107,43,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 1.4rem; margin-bottom: 20px; }
+.service-title { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; margin-bottom: 10px; }
+.service-desc { color: var(--text2); font-size: 0.9rem; line-height: 1.65; }
+
+/* =============================================
+   CONTACT
+   ============================================= */
+#contact { background: var(--bg2); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; margin-top: 60px; align-items: start; }
+.contact-info-title { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; margin-bottom: 16px; }
+.contact-info-text { color: var(--text2); margin-bottom: 32px; }
+.contact-items { display: flex; flex-direction: column; gap: 20px; }
+.contact-item { display: flex; gap: 16px; align-items: flex-start; }
+.contact-item-icon { width: 44px; height: 44px; min-width: 44px; background: rgba(255,107,43,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 1rem; }
+.contact-item-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 2px; }
+.contact-item-value { font-weight: 600; color: var(--text); font-size: 0.95rem; }
+.contact-form { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); margin-bottom: 8px; }
+.form-group input, .form-group textarea {
+  width: 100%; padding: 12px 16px; border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm); background: var(--bg2); color: var(--text);
+  font-family: var(--font-body); font-size: 0.95rem;
+  transition: border-color var(--transition); outline: none;
+}
+.form-group input:focus, .form-group textarea:focus { border-color: var(--orange); }
+.form-group textarea { resize: vertical; min-height: 130px; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer { background: var(--bg); border-top: 1px solid var(--border); padding: 48px 40px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; }
+.footer-logo { font-family: var(--font-head); font-size: 1.8rem; font-weight: 700; }
+.footer-logo span { color: var(--orange); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: center; }
+.footer-links a { font-size: 0.85rem; font-weight: 600; color: var(--text3); transition: color var(--transition); }
+.footer-links a:hover { color: var(--orange); }
+.footer-social { display: flex; gap: 12px; }
+.footer-social a { width: 38px; height: 38px; border-radius: 50%; background: var(--bg2); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text3); font-size: 0.85rem; transition: all var(--transition); }
+.footer-social a:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+.footer-copy { font-size: 0.82rem; color: var(--text3); }
+.footer-copy span { color: var(--orange); font-weight: 700; }
+
+/* =============================================
+   FADE-IN
+   ============================================= */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-in.visible { opacity: 1; transform: none; }
+
+/* =============================================
+   LOGIN MODAL
+   ============================================= */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 3000;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+  align-items: center; justify-content: center;
+}
+.modal-overlay.show { display: flex; }
+.modal-box { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; width: 100%; max-width: 420px; position: relative; box-shadow: var(--shadow-lg); }
+.modal-close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border: none; background: var(--bg2); border-radius: 50%; color: var(--text3); font-size: 0.85rem; display: flex; align-items: center; justify-content: center; transition: all var(--transition); }
+.modal-close:hover { background: var(--orange); color: #fff; }
+.modal-title { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+.modal-subtitle { color: var(--text3); font-size: 0.88rem; margin-bottom: 24px; }
+.modal-error { background: rgba(239,68,68,0.1); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; display: none; }
+.modal-error.show { display: block; }
+
+/* =============================================
+   ADMIN PANEL
+   ============================================= */
+#admin-panel {
+  display: none; position: fixed; inset: 0; z-index: 2000;
+  background: var(--bg); overflow-y: auto;
+  flex-direction: column;
+}
+#admin-panel.show { display: flex; }
+.admin-topbar {
+  height: 64px; padding: 0 32px; display: flex; align-items: center;
+  justify-content: space-between; background: var(--bg);
+  border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10;
+}
+.admin-topbar-title { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 10px; color: var(--orange); }
+.admin-body { display: flex; flex: 1; min-height: 0; }
+.admin-sidebar {
+  width: 200px; min-height: 100%; background: var(--bg2);
+  border-right: 1px solid var(--border); padding: 24px 0;
+  display: flex; flex-direction: column; gap: 4px; position: sticky; top: 64px; height: calc(100vh - 64px);
+}
+.admin-nav-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 20px; color: var(--text2); cursor: pointer;
+  font-weight: 600; font-size: 0.88rem; border-radius: 0;
+  transition: all var(--transition); border-left: 3px solid transparent;
+}
+.admin-nav-item:hover { background: var(--bg3); color: var(--orange); }
+.admin-nav-item.active { background: rgba(255,107,43,0.08); color: var(--orange); border-left-color: var(--orange); }
+.admin-content { flex: 1; padding: 32px; overflow-y: auto; }
+.admin-section { display: none; }
+.admin-section.active { display: block; }
+.admin-section-title { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; }
+.admin-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 20px; }
+.admin-card-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; color: var(--text); }
+.admin-input {
+  width: 100%; padding: 10px 14px; border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm); background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 0.9rem;
+  transition: border-color var(--transition); outline: none; margin-bottom: 12px;
+}
+.admin-input:focus { border-color: var(--orange); }
+.admin-textarea {
+  width: 100%; padding: 10px 14px; border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm); background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 0.9rem; resize: vertical;
+  min-height: 100px; outline: none; transition: border-color var(--transition); margin-bottom: 12px;
+}
+.admin-textarea:focus { border-color: var(--orange); }
+.admin-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 18px; border-radius: 99px; font-size: 0.82rem;
+  font-weight: 700; border: none; cursor: pointer; transition: all var(--transition);
+}
+.admin-btn-primary { background: var(--orange); color: #fff; }
+.admin-btn-primary:hover { background: var(--orange-dark); }
+.admin-btn-ghost { background: var(--bg3); color: var(--text2); border: 1px solid var(--border); }
+.admin-btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+.admin-btn-danger { background: rgba(239,68,68,0.1); color: #ef4444; border: 1px solid rgba(239,68,68,0.2); }
+.admin-btn-danger:hover { background: #ef4444; color: #fff; }
+.admin-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.admin-row { display: flex; align-items: center; gap: 12px; }
+.admin-item-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+.admin-item-sub { font-size: 0.82rem; color: var(--text3); }
+.admin-item-actions { display: flex; gap: 8px; margin-top: 12px; }
+@media (max-width: 700px) { .admin-sidebar { display: none; } .admin-grid-2 { grid-template-columns: 1fr; } }
+
+/* =============================================
+   TOAST
+   ============================================= */
+.toast {
+  position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-radius: var(--radius-sm);
+  color: #fff; font-weight: 700; font-size: 0.88rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  transform: translateY(80px); opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  pointer-events: none;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+</style>
+</head>
+
+<body>
+
+<!-- =============================================
+     NAVBAR
+     ============================================= -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Siam<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-theme" id="theme-toggle" aria-label="Toggle theme">
+      <i class="fas fa-moon" id="theme-icon"></i>
+    </button>
+    <button class="btn-admin-nav" id="admin-login-btn">
+      <i class="fas fa-lock"></i> Admin
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+  <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- =============================================
+     HERO
+     ============================================= -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Available for Freelance</div>
+      <h1 class="hero-name">
+        Hi, I'm<br>
+        <span class="highlight" id="hero-name-text">Md. Siam Hossen</span>
+      </h1>
+      <p class="hero-role" id="hero-role-text">AI Automation Learner &amp; Freelancer</p>
+      <p class="hero-desc" id="hero-desc-text">Building smart automations that save time and grow businesses.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Hire Me</a>
+        <a href="#" class="btn btn-outline" id="cv-download-btn"><i class="fas fa-file-pdf"></i> Download CV</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num" id="stat-projects">12</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" id="stat-clients">8</div>
+          <div class="stat-label">Clients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" id="stat-experience">1+</div>
+          <div class="stat-label">Years Exp.</div>
+        </div>
+      </div>
+      <div class="hero-social" id="hero-social-links" style="position:static;flex-direction:row;margin-top:32px;display:flex;gap:10px;">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-image-outer">
+        <div class="hero-image-inner" id="hero-img-container">
+          <span class="placeholder-icon"><i class="fas fa-user"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     ABOUT
+     ============================================= -->
+<section id="about">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Who I Am &amp; What I Do</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-image-wrap fade-in">
+        <div class="about-image-outer" id="about-img-container">
+          <span class="placeholder-icon"><i class="fas fa-user"></i></span>
+        </div>
+      </div>
+      <div class="fade-in">
+        <p class="about-text" id="about-text"></p>
+        <div class="about-info-grid">
+          <div class="info-item">
+            <div class="info-label">Location</div>
+            <div class="info-value" id="contact-location">Khulna, Bangladesh</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Status</div>
+            <div class="info-value" style="color:var(--orange)">For Freelance</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Focus</div>
+            <div class="info-value">AI &amp; Automation</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Email</div>
+            <div class="info-value" id="contact-email" style="font-size:0.82rem;word-break:break-all;"></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Me</a>
+          <a href="#" class="btn btn-outline" id="cv-download-btn2"><i class="fas fa-file-pdf"></i> Download CV</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SKILLS
+     ============================================= -->
+<section id="skills">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">My Skills</div>
+      <h2 class="section-title">What I'm Learning &amp; Building</h2>
+      <p class="section-subtitle">A growing set of skills in AI, automation, and web development.</p>
+    </div>
+    <div class="skills-grid" id="skills-grid">
+      <p style="color:var(--text3);grid-column:1/-1;text-align:center;padding:40px 0;">Loading skills…</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     PROJECTS
+     ============================================= -->
+<section id="projects">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">My Projects</div>
+      <h2 class="section-title">Things I've Built</h2>
+      <p class="section-subtitle">Real-world projects I've worked on while learning and growing.</p>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <p style="color:var(--text3);grid-column:1/-1;text-align:center;padding:40px 0;">Loading projects…</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SERVICES
+     ============================================= -->
+<section id="services">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Services</div>
+      <h2 class="section-title">What I Offer</h2>
+      <p class="section-subtitle">Freelancing services I provide to help businesses grow.</p>
+    </div>
+    <div class="services-grid" id="services-grid">
+      <p style="color:var(--text3);grid-column:1/-1;text-align:center;padding:40px 0;">Loading services…</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CONTACT
+     ============================================= -->
+<section id="contact">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="section-subtitle">Have a project in mind? I'd love to hear about it.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <h3 class="contact-info-title">Get In Touch</h3>
+        <p class="contact-info-text">I'm currently available for freelance work and collaborations. Let's build something amazing together!</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-item-detail">
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value" id="contact-email-display"></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-item-detail">
+              <div class="contact-item-label">Location</div>
+              <div class="contact-item-value" id="contact-location-display">Khulna, Bangladesh</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-item-detail">
+              <div class="contact-item-label">Availability</div>
+              <div class="contact-item-value">Open to Work</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;" id="contact-social-links"></div>
+      </div>
+
+      <!-- Real contact form with IDs for JS submission -->
+      <form class="contact-form fade-in" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-name">Your Name *</label>
+            <input type="text" id="contact-name" placeholder="John Doe" required maxlength="100" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="contact-email-input">Your Email *</label>
+            <input type="email" id="contact-email-input" placeholder="john@email.com" required maxlength="200" autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contact-subject">Subject</label>
+          <input type="text" id="contact-subject" placeholder="Project Inquiry" maxlength="200" />
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message *</label>
+          <textarea id="contact-message" placeholder="Tell me about your project..." required maxlength="2000"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FOOTER
+     ============================================= -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Siam<span>.</span></div>
+    <ul class="footer-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-social" id="footer-social-links"></div>
+    <p class="footer-copy">© 2025 <span>Md. Siam Hossen</span>. Designed with ❤️ &amp; built with code.</p>
+  </div>
+</footer>
+
+<!-- =============================================
+     ADMIN LOGIN MODAL
+     ============================================= -->
+<div class="modal-overlay" id="login-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeLoginModal()" aria-label="Close"><i class="fas fa-times"></i></button>
+    <div class="modal-title"><i class="fas fa-shield-alt" style="color:var(--orange)"></i> Admin Login</div>
+    <p class="modal-subtitle">Enter your credentials to access the dashboard.</p>
+    <div class="modal-error" id="login-error">Incorrect username or password.</div>
+    <div class="form-group">
+      <label for="login-username">Username</label>
+      <input class="admin-input" type="text" id="login-username" placeholder="admin" autocomplete="username" />
+    </div>
+    <div class="form-group">
+      <label for="login-password">Password</label>
+      <input class="admin-input" type="password" id="login-password" placeholder="••••••" autocomplete="current-password" />
+    </div>
+    <button class="btn btn-primary" id="login-submit-btn" style="width:100%;justify-content:center;margin-top:8px;" onclick="doLogin()">
+      <i class="fas fa-sign-in-alt"></i> Login
+    </button>
+  </div>
+</div>
+
+<!-- =============================================
+     ADMIN DASHBOARD
+     ============================================= -->
+<div id="admin-panel">
+  <div class="admin-topbar">
+    <div class="admin-topbar-title"><i class="fas fa-cog"></i> Admin Dashboard</div>
+    <div style="display:flex;gap:12px;align-items:center;">
+      <span style="font-size:0.82rem;color:var(--text3);">Logged in as <strong id="admin-username-display">admin</strong></span>
+      <button class="admin-btn admin-btn-ghost" onclick="closeAdminPanel()"><i class="fas fa-times"></i> Close</button>
+      <button class="admin-btn admin-btn-danger" onclick="logoutAdmin()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+  </div>
+
+  <div class="admin-body">
+    <div class="admin-sidebar">
+      <div class="admin-nav-item active" onclick="switchAdminTab('tab-profile')" id="nav-tab-profile"><i class="fas fa-user"></i><span>Profile</span></div>
+      <div class="admin-nav-item" onclick="switchAdminTab('tab-about')" id="nav-tab-about"><i class="fas fa-info-circle"></i><span>About</span></div>
+      <div class="admin-nav-item" onclick="switchAdminTab('tab-skills')" id="nav-tab-skills"><i class="fas fa-star"></i><span>Skills</span></div>
+      <div class="admin-nav-item" onclick="switchAdminTab('tab-projects')" id="nav-tab-projects"><i class="fas fa-folder"></i><span>Projects</span></div>
+      <div class="admin-nav-item" onclick="switchAdminTab('tab-services')" id="nav-tab-services"><i class="fas fa-briefcase"></i><span>Services</span></div>
+      <div class="admin-nav-item" onclick="switchAdminTab('tab-social')" id="nav-tab-social"><i class="fas fa-share-alt"></i><span>Social</span></div>
+      <div class="admin-nav-item" onclick="switchAdminTab('tab-cv')" id="nav-tab-cv"><i class="fas fa-file-pdf"></i><span>CV</span></div>
+      <div class="admin-nav-item" onclick="switchAdminTab('tab-messages')" id="nav-tab-messages"><i class="fas fa-envelope"></i><span>Messages</span></div>
+      <div class="admin-nav-item" onclick="switchAdminTab('tab-security')" id="nav-tab-security"><i class="fas fa-lock"></i><span>Security</span></div>
+    </div>
+
+    <div class="admin-content">
+
+      <!-- Profile Tab -->
+      <div class="admin-section active" id="tab-profile">
+        <div class="admin-section-title">Profile Details</div>
+        <div class="admin-card">
+          <div class="admin-card-title"><i class="fas fa-user"></i> Basic Info</div>
+          <div class="admin-grid-2">
+            <input class="admin-input" id="admin-name" placeholder="Full Name" />
+            <input class="admin-input" id="admin-role" placeholder="Your Role / Title" />
+          </div>
+          <textarea class="admin-textarea" id="admin-bio" placeholder="Short bio (shown in hero)" style="min-height:80px;"></textarea>
+          <div class="admin-grid-2">
+            <input class="admin-input" type="email" id="admin-email" placeholder="Contact Email" />
+            <input class="admin-input" id="admin-location" placeholder="Location" />
+          </div>
+          <div class="admin-card-title" style="margin-top:8px;"><i class="fas fa-chart-bar"></i> Stats</div>
+          <div class="admin-grid-2">
+            <input class="admin-input" type="number" id="admin-stats-projects" placeholder="Projects count" />
+            <input class="admin-input" type="number" id="admin-stats-clients" placeholder="Clients count" />
+          </div>
+          <input class="admin-input" id="admin-stats-experience" placeholder="Experience (e.g. 1+)" />
+          <button class="admin-btn admin-btn-primary" onclick="saveProfile()"><i class="fas fa-save"></i> Save Profile</button>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><i class="fas fa-image"></i> Profile Image</div>
+          <p style="font-size:0.85rem;color:var(--text3);margin-bottom:14px;">Paste a direct image URL (Imgur, Google Drive direct link, etc.)</p>
+          <input class="admin-input" type="url" id="admin-image-url" placeholder="https://i.imgur.com/yourimage.jpg" />
+          <button class="admin-btn admin-btn-primary" onclick="saveProfileImage()"><i class="fas fa-link"></i> Apply Image URL</button>
+        </div>
+      </div>
+
+      <!-- About Tab -->
+      <div class="admin-section" id="tab-about">
+        <div class="admin-section-title">About Section</div>
+        <div class="admin-card">
+          <div class="admin-card-title"><i class="fas fa-align-left"></i> About Text</div>
+          <textarea class="admin-textarea" id="admin-about-text" style="min-height:180px;" placeholder="Write your about section here…"></textarea>
+          <button class="admin-btn admin-btn-primary" onclick="saveAboutText()"><i class="fas fa-save"></i> Save About Text</button>
+        </div>
+      </div>
+
+      <!-- Skills Tab -->
+      <div class="admin-section" id="tab-skills">
+        <div class="admin-section-title">Manage Skills</div>
+        <div class="admin-card">
+          <div class="admin-card-title"><i class="fas fa-plus"></i> Add Skill Category</div>
+          <div class="admin-grid-2">
+            <input class="admin-input" id="new-skill-cat" placeholder="Category (e.g. AI & Automation)" />
+            <input class="admin-input" id="new-skill-icon" placeholder="Icon class (e.g. fas fa-robot)" />
+          </div>
+          <label style="font-size:0.8rem;font-weight:700;color:var(--text3);margin-bottom:6px;display:block;">
+            Skills — one per line as: <code>Skill Name:Level</code> (e.g. <code>Python:75</code>)
+          </label>
+          <textarea class="admin-textarea" id="new-skill-items" placeholder="n8n Automation:85&#10;Make.com:80&#10;Python:70" style="min-height:100px;font-family:monospace;"></textarea>
+          <button class="admin-btn admin-btn-primary" onclick="addSkill()"><i class="fas fa-plus"></i> Add Category</button>
+        </div>
+        <div id="admin-skills-list"></div>
+      </div>
+
+      <!-- Projects Tab -->
+      <div class="admin-section" id="tab-projects">
+        <div class="admin-section-title">Manage Projects</div>
+        <div class="admin-card">
+          <div class="admin-card-title"><i class="fas fa-plus"></i> Add New Project</div>
+          <div class="admin-grid-2">
+            <input class="admin-input" id="new-proj-title" placeholder="Project Title *" />
+            <input class="admin-input" id="new-proj-tags" placeholder="Tags (comma separated)" />
+          </div>
+          <textarea class="admin-textarea" id="new-proj-desc" placeholder="Project description…" style="min-height:80px;"></textarea>
+          <div class="admin-grid-2">
+            <input class="admin-input" id="new-proj-github" placeholder="GitHub URL" />
+            <input class="admin-input" id="new-proj-live" placeholder="Live Demo URL" />
+          </div>
+          <input class="admin-input" id="new-proj-icon" placeholder="Icon class (e.g. fas fa-robot)" />
+          <button class="admin-btn admin-btn-primary" onclick="addProject()"><i class="fas fa-plus"></i> Add Project</button>
+        </div>
+        <div id="admin-projects-list"></div>
+      </div>
+
+      <!-- Services Tab -->
+      <div class="admin-section" id="tab-services">
+        <div class="admin-section-title">Manage Services</div>
+        <div class="admin-card">
+          <div class="admin-card-title"><i class="fas fa-plus"></i> Add New Service</div>
+          <div class="admin-grid-2">
+            <input class="admin-input" id="new-svc-title" placeholder="Service Title *" />
+            <input class="admin-input" id="new-svc-icon" placeholder="Icon class (e.g. fas fa-robot)" />
+          </div>
+          <textarea class="admin-textarea" id="new-svc-desc" placeholder="Service description…" style="min-height:80px;"></textarea>
+          <button class="admin-btn admin-btn-primary" onclick="addService()"><i class="fas fa-plus"></i> Add Service</button>
+        </div>
+        <div id="admin-services-list"></div>
+      </div>
+
+      <!-- Social Tab -->
+      <div class="admin-section" id="tab-social">
+        <div class="admin-section-title">Social Links</div>
+        <div class="admin-card">
+          <div class="admin-card-title"><i class="fas fa-share-alt"></i> Social Media URLs</div>
+          <div id="admin-social-fields"></div>
+          <button class="admin-btn admin-btn-primary" onclick="saveSocialLinks()"><i class="fas fa-save"></i> Save Links</button>
+        </div>
+      </div>
+
+      <!-- CV Tab -->
+      <div class="admin-section" id="tab-cv">
+        <div class="admin-section-title">CV / Resume</div>
+        <div class="admin-card">
+          <div class="admin-card-title"><i class="fas fa-file-pdf"></i> CV Download Link</div>
+          <p style="font-size:0.87rem;color:var(--text3);margin-bottom:14px;">
+            Upload your CV to Google Drive, set sharing to "Anyone with the link", and paste the direct link here.
+          </p>
+          <input class="admin-input" id="admin-cv-link" placeholder="https://drive.google.com/uc?export=download&id=YOUR_ID" />
+          <button class="admin-btn admin-btn-primary" onclick="saveCVLink()"><i class="fas fa-save"></i> Save CV Link</button>
+        </div>
+      </div>
+
+      <!-- Messages Tab -->
+      <div class="admin-section" id="tab-messages">
+        <div class="admin-section-title">Contact Messages</div>
+        <div id="admin-messages-list">
+          <p style="color:var(--text3);">Loading messages…</p>
+        </div>
+      </div>
+
+      <!-- Security Tab -->
+      <div class="admin-section" id="tab-security">
+        <div class="admin-section-title">Security</div>
+        <div class="admin-card">
+          <div class="admin-card-title"><i class="fas fa-user"></i> Change Username</div>
+          <input class="admin-input" id="new-username" placeholder="New username (min 3 chars)" />
+          <button class="admin-btn admin-btn-primary" onclick="changeUsername()"><i class="fas fa-save"></i> Save Username</button>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><i class="fas fa-key"></i> Change Password</div>
+          <input class="admin-input" type="password" id="current-password" placeholder="Current password" autocomplete="current-password" />
+          <input class="admin-input" type="password" id="new-password" placeholder="New password (min 8 chars)" autocomplete="new-password" />
+          <input class="admin-input" type="password" id="confirm-password" placeholder="Confirm new password" autocomplete="new-password" />
+          <button class="admin-btn admin-btn-primary" onclick="changePassword()"><i class="fas fa-save"></i> Save Password</button>
+        </div>
+      </div>
+
+    </div><!-- /admin-content -->
+  </div><!-- /admin-body -->
+</div><!-- /admin-panel -->
+
+<!-- Toast -->
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toast-msg">Saved!</span></div>
+
+<!-- =============================================
+     SCRIPTS — Load in order
+     ============================================= -->
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+// Admin tab switching (inline because it's pure DOM, no API)
+function switchAdminTab(tab) {
+  document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.admin-nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById(tab)?.classList.add('active');
+  document.getElementById('nav-' + tab)?.classList.add('active');
+}
+
+// Enter key on login modal
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && document.getElementById('login-modal')?.classList.contains('show')) doLogin();
+});
+
+// Close mobile menu
+function closeMobileMenu() {
+  document.getElementById('mobile-menu')?.classList.remove('open');
+}
+
+// Close login modal on backdrop click
+document.getElementById('login-modal')?.addEventListener('click', (e) => {
+  if (e.target === document.getElementById('login-modal')) closeLoginModal();
+});
+</script>
+
+</body>
+</html>
